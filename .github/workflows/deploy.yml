@@ -12,10 +12,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: List files
-        run: ls -a
       - name: Install jest
         run : npm i jest
       - name: Run Tests
         run: npm run test
+      - name: List files
+        if: success()
+        run: ls -a
   
